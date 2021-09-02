@@ -1,0 +1,13 @@
+x = list(input())
+a = 0
+b = 0
+
+for i in range(len(x)):
+  if i%2 == 0:
+    x[i] = int(x[i])
+    a = a+x[i]
+  else:
+    x[i] = int(x[i])
+    b = b+x[i]
+
+print(abs(a-b))
