@@ -1,0 +1,27 @@
+n = int(input())
+m = list(map(int,input().split()))
+friends = list()
+group = 0
+for i in range(n):
+  friends.append(i)
+h = 0
+k = 0
+l = 0
+while k >= 0:
+  if m[friends[k]] == h:
+    group = group+1
+    m[friends[k]] = -1
+    friends[k] = -1
+    for i in range(n):
+      if m[i] != -1:
+        h = m[i]
+        k = h
+        break
+      else:
+        k = -1
+  else:
+    l = k
+    k = m[friends[k]]
+    m[l] = -1
+
+print(group)
